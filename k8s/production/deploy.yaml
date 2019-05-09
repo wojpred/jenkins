@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: app-demo
-        image: mojeregistry007.azurecr.io/rapi
+        image: mojeregistry007.azurecr.io/v1.0.0:latest
         ports:
         - containerPort: 4000
       imagePullSecrets:
