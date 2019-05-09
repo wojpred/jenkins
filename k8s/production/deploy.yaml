@@ -5,8 +5,9 @@ metadata:
   name: app-deployment
   labels:
     app: app-demo
+    env: production
 spec:
-  replicas: 1
+  replicas: 4
   selector:
     matchLabels:
       app: app-demo
