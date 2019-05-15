@@ -10,7 +10,7 @@ node {
  stage('Build the Image and Push to Azure Container Registry') 
  {
    app = docker.build("${imageName}")
-   withDockerRegistry([credentialsId: 'az_auth', url: "https://${acr}"]) {
+   withDockerRegistry([credentialsId: 'az-auth', url: "https://${acr}"]) {
       app.push("${env.BRANCH_NAME}.${env.BUILD_NUMBER}")
                 }
   }
