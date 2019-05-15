@@ -30,9 +30,8 @@ node {
     case "master":
         // Change deployed image in master to the one we just built
         sh("sudo sed -i.bak 's#${appRepo}#${imageTag}#' ./k8s/production/*.yaml")
-        sh("sudo kubectl --namespace=prod apply -f k8s/production/*.yaml")
+        sh("sudo kubectl --kubeconfig ~dalton/.kube/config --namespace=prod apply -f k8s/production/")
         sh("sudo echo http://kubectl --namespace=prod get service/${appName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip' > ${appName}")
-        sh("sudo kubectl --kubeconfig ~dalton/.kube/config --namespace=prod apply -f ./production/")    
     break
 
     // Roll out a dev environment
