@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: app-demo
-        image: newrejestr2018.azurecr.io/v1.0.0:1
+        image: newrejestr2018.azurecr.io/apka:1
         ports:
         - containerPort: 4000
       imagePullSecrets:
